@@ -390,20 +390,6 @@ function M.config(server_name)
     local schemastore_avail, schemastore = pcall(require, "schemastore")
     if schemastore_avail then lsp_opts.settings = { yaml = { schemas = schemastore.yaml.schemas() } } end
   end
-  if server_name == "lua_ls" then -- by default initialize neodev and disable third party checking
-    pcall(require, "neodev")
-    lsp_opts.before_init = function(param, config)
-      if vim.b.neodev_enabled then
-        for _, astronvim_config in ipairs(astronvim.supported_configs) do
-          if param.rootPath:match(astronvim_config) then
-            table.insert(config.settings.Lua.workspace.library, astronvim.install.home .. "/lua")
-            break
-          end
-        end
-      end
-    end
-    lsp_opts.settings = { Lua = { workspace = { checkThirdParty = false } } }
-  end
   local opts = user_opts(server_config .. server_name, lsp_opts)
   local old_on_attach = server.on_attach
   local user_on_attach = opts.on_attach

@@ -10,7 +10,6 @@ return {
   { "b0o/SchemaStore.nvim", commit = "6c580be8adce05d542aa2ca39ef30585a343bc9f" },
   { "famiu/bufdelete.nvim", commit = "8933abc09df6c381d47dc271b1ee5d266541448e" },
   { "folke/lazy.nvim", version = "^9" },
-  { "folke/neodev.nvim", version = "^2" },
   { "folke/which-key.nvim", version = "^1" },
   { "goolord/alpha-nvim", commit = "1838ae926e8d49fe5330d1498ee8289ae2c340bc" },
   { "hrsh7th/cmp-buffer", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
